@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PagoComponent } from './pago/pago.component';
 import { ProductosComponent } from './productos/productos.component';
+import { DatosEnvioComponent } from './datos-envio/datos-envio.component';
 
 
 const routes: Routes = [{
@@ -21,6 +22,10 @@ const routes: Routes = [{
 {
     path:'pago',
     component: PagoComponent
+},
+{
+  path:'datosEnvio',
+  component: DatosEnvioComponent
 }
 ];
 
@@ -29,7 +34,8 @@ const routes: Routes = [{
     AppComponent,
     LoginComponent,
     PagoComponent,
-    ProductosComponent
+    ProductosComponent,
+    DatosEnvioComponent
   ],
   imports: [
     BrowserModule,

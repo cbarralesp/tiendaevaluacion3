@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TotalService } from '../total.service';
 
@@ -114,10 +114,18 @@ export class ProductosComponent implements OnInit {
   ];
   productosCarritoActual: any;
 
-  constructor(){
-
+  
+  constructor(public serviceData: TotalService){
+   
   }
   ngOnInit(){
+  }
+
+  productoSeleccionado:any[] = []
+
+  productoModal(i: any){
+      this.productoSeleccionado = []
+      this.productoSeleccionado.push(this.productosActual[i])
   }
 
   agregarProducto(i: any){

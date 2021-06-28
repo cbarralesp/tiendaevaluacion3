@@ -24,6 +24,7 @@ carousel-item{
       #e8f3f7,
       #f1f0f0
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   }
 
   
@@ -81,7 +82,9 @@ ul, ol {
 
   /* Fin Footer */
 
-
+  span{
+    height: 30px;
+  }
 
   img {
     max-width: 100%; }

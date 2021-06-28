@@ -3,17 +3,18 @@ import {Router} from '@angular/router';
 import { TotalService } from '../total.service';
 
 @Component({
-  selector: 'app-pago',
-  templateUrl: './pago.component.html',
-  styleUrls: ['./pago.component.css']
+  selector: 'app-datos-envio',
+  templateUrl: './datos-envio.component.html',
+  styleUrls: ['./datos-envio.component.css']
 })
-export class PagoComponent implements OnInit {
+export class DatosEnvioComponent implements OnInit {
 
   constructor(public serviceData: TotalService){
-   
+  
   }
 
   ngOnInit(): void {
+    
   }
 
 }
