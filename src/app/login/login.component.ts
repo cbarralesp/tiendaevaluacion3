@@ -32,7 +32,9 @@ export class LoginComponent implements OnInit {
       this.alertUser = "Debe completar los campos";
 
     }else if(this.user.value == this.cUser && this.pwd.value == this.cPwd){
+
       this.serviceData.userSesion = this.user.value
+      
       this.router.navigate(['productos']);
     }else{
       this.alertUser = "Usuario o password incorrecto"

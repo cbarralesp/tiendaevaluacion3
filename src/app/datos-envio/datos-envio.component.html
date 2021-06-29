@@ -31,25 +31,25 @@
                     <!-- Text input-->
                     <div class="form-group">
                         <label class="control-label" for="textinput">Nombre</label>
-                        <input type="text" placeholder="Nombre" class="form-control">
+                        <input type="text"  [formControl]="nombre" placeholder="Nombre" class="form-control">
                     </div>
                     <!-- Text input-->
                     <div class="form-group">
                         <label class="control-label" for="textinput">Apellido</label>
-                        <input type="text" placeholder="Apellido" class="form-control">
+                        <input type="text"  [formControl]="apellido" placeholder="Apellido" class="form-control">
                     </div>
 
                     <!-- Text input-->
                     <div class="form-group">
                         <label class="control-label" for="textinput">Direción particular</label>
-                        <input type="text" placeholder="Direción particular" class="form-control">
+                        <input type="text"  [formControl]="direccion" placeholder="Direción particular" class="form-control">
                     </div>
                     <!-- Text input-->
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="inputState">Región</label>
-                                  <select id="inputState" class="form-control">
+                                  <select id="inputState" class="form-control" [formControl]="region" >
                                       <option selected>Seleccione región</option>
                                       <option>Arica y Parinacota</option>
                                       <option>Tarapacá</option>
@@ -72,14 +72,14 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="control-label" for="textinput">Código postal</label>
-                                <input type="text" placeholder="Código postal" class="form-control">
+                                <input type="text" placeholder="Código postal" class="form-control"  [formControl]="codigoP" >
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="inputState">Comuna</label>
-                                  <select id="inputState" class="form-control">
+                                  <select id="inputState" class="form-control"  [formControl]="comuna" >
                                       <option selected>Seleccione comuna</option>
                                       <!-- Solo agrego algunas comunas-->
                                       <option>Santiago</option>
@@ -92,17 +92,17 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="control-label">Email:</label>
-                        <input type="text" class="form-control" placeholder="abc@gmail.com" />
+                        <input type="text" class="form-control"  [formControl]="email" placeholder="abc@gmail.com" />
                     </div>
                     <div class="form-group">
                           <label class="form-label">Fecha de entrega</label>
-                          <input type="date" formControlName="fecha" class="form-control" >
+                          <input type="date" class="form-control"  [formControl]="fecha"  >
                           <label class="form-label">Hora de entrega</label>
-                           <input type="time" formControlName="hora" class="form-control" >
+                           <input type="time" class="form-control" [formControl]="hora"  >
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Observaciones de entrega:</label>
-                        <textarea rows="8" class="form-control"></textarea>
+                        <label class="control-label"   >Observaciones de entrega:</label>
+                        <textarea rows="8" class="form-control" [formControl]="obs"></textarea>
                     </div>
                 </div>
             </div>
@@ -110,7 +110,8 @@
             <div class="form-group">
                 <div class="text-center">
                     <button type="reset" class="btn btn-default"><i class="fa fa-remove"></i> Limpiar</button>
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Guardar y continuar</button>
+                    <button type="submit" (click)="guardar()" class="btn btn-primary"><i class="fa fa-save"></i> Guardar y continuar</button>
+                    <span style="color:red">{{alertUser}}</span>
                 </div>
             </div>
         </form>
@@ -132,8 +133,8 @@
       <div class="row row-30">
         <div class="col-md-4 col-xl-5">
           <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
-                src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37"
-                srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+               
+                srcset=""></a>
             <p>Servicio que ofrece exclusivamente de nuestra tienda a sus clientes para proteger su instrumento y equipos
               de audio desde el momento de la compra.</p>
             <!-- Rights-->
@@ -159,13 +160,13 @@
           </dl>
         </div>
         <div class="col-md-4 col-xl-3">
-          <h5>Links</h5>
+          <h5>Listado de productos</h5>
           <ul class="nav-list">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacts</a></li>
-            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Guitarras</a></li>
+            <li><a href="#">Pedales</a></li>
+            <li><a href="#">Amplificadores</a></li>
+            <li><a href="#">Cuerdas</a></li>
+            <li><a href="#">Pianos</a></li>
           </ul>
         </div>
       </div>
