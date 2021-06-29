@@ -5,13 +5,11 @@
 <!--Navbar-->
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="nav-link" routerLink="productos">Productos</a>
+    <a class="nav-link" routerLink="productos" >Productos</a>
     <form class="d-flex">
-      <input class="form-control me-lg-12" (keyup)="buscar(buscartexto.value)" type="text" placeholder="Buscar productos" #buscartexto aria-label="Search">
+      <input class="form-control me-lg-12 " (keyup)="buscar(buscartexto.value)" type="text " placeholder="Buscar productos" #buscartexto aria-label="Search">
             <button (click)="buscar(buscartexto.value)" class="btn btn-outline-success" type="button">Buscar</button>
-
-        
-      <!--<button (click) = "quitarBusqueda()" class="btn btn-outline-success" type="submit">limpiar</button> -->
+   
       <svg class="bi" width="32" height="32" fill="currentColor">
         <use xlink:href="bootstrap-icons.svg#heart-fill" />
       </svg>
@@ -59,7 +57,6 @@
 </div>
 
 <!-- FIN CARRUSEL-->
-<br>
 
 <!-- LISTADO DE PRODUCTOS-->
 
@@ -73,11 +70,11 @@
           <img width="250" src="{{items.img}}" class="img-fluid img-thumbnail" (click)="productoModal(i)"
             data-bs-target="#exampleModa2" data-bs-toggle="modal"><br>
           <span class="fw-bolder">{{items.nombre}}</span><br>
-          <span>{{items.precio | currency:' CLP '}}</span><br>
+          <span>$ {{items.precio }}</span><br>
 
           <button mat-raised-button type="button " class="btn btn-success col-12" (click)="agregarProducto(i)"><i
               style="color:green" class="fa fa-plus-circle" aria-hidden="true"></i>Agregar</button>
-          <br>
+      
 
 
         </div>
@@ -208,8 +205,22 @@
 </div>
 
  <br>
-<!--FOOTER-->
 
+ <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" >1</a></li>
+    <li class="page-item"><a class="page-link" (click)="pagina()">2</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+ 
+<!--FOOTER-->
+br
 
 <footer class="section footer-classic context-dark bg-dark">
   <div class="container">

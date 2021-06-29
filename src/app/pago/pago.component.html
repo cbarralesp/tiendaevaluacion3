@@ -7,33 +7,34 @@
 
 
 <div class="container">
+   
     <br>
        
     <hr>
-
+  
     <div class="row">
-        <aside class="col-sm-6">
+        <aside class="col-sm-6" >
             <p>Forma de pago</p>
 
             <article class="card">
                 <div class="card-body p-5">
                     <ul class="nav bg-light nav-pills rounded nav-fill mb-3" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="pill" href="#nav-tab-card">
+                            <a class="nav-link active" data-toggle="pill" href="">
                                 <i class="fa fa-credit-card"></i> Tarjeta de credito</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
+                            <a class="nav-link" data-toggle="pill" href="">
                                 <i class="fab fa-paypal"></i> Paypal</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#nav-tab-bank">
+                            <a class="nav-link" data-toggle="pill" href="">
                                 <i class="fa fa-university"></i> Bank Transfer</a>
                         </li>
                     </ul>
                     <p class="alert alert-success">Ingreso de tarjeta de credito</p>
 
-                    <form role="form">
+                    <form >
                         <div class="form-group">
                             <label for="username">Nombre titular</label>
                             <div class="input-group">
@@ -103,7 +104,7 @@
                             <h2 class="text-center">Total a pagar</h2>
                             <form role="form">
                                 <div class="form-group">
-                                    <p> Sr: {{datosCliente.apellido}}</p>
+                                    <p> Estimado Sr: {{datosCliente.apellido}}</p>
                                     <p> Direccion envio: {{datosCliente.direccion}} </p>
                                     <p> Fecha de entrega: {{datosCliente.fecha}}</p>
                                     
@@ -135,3 +136,62 @@
 
 </div>
 <!--container end.//-->
+
+<br>
+<!--FOOTER-->
+
+
+<footer class="section footer-classic context-dark bg-dark">
+    <div class="container">
+      <div class="row row-30">
+        <div class="col-md-4 col-xl-5">
+          <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
+               
+                srcset=""></a>
+            <p>Servicio que ofrece exclusivamente de nuestra tienda a sus clientes para proteger su instrumento y equipos
+              de audio desde el momento de la compra.</p>
+            <!-- Rights-->
+            <p class="rights"><span>©  </span><span
+                class="copyright-year">2021</span><span> </span><span>everis</span><span>. </span><span>All Rights
+                Reserved.</span></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5>Contacts</h5>
+          <dl class="contact-list">
+            <dt>direccion:</dt>
+            <dd>Avenida siempre viva, 1212</dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>email:</dt>
+            <dd><a href="mailto:#">emusica@gmail.com</a></dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>telefono de contactos:</dt>
+            <dd><a href="tel:#">5555-5555</a> <span>or</span> <a href="tel:#">7777-7777</a>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-md-4 col-xl-3">
+          <h5>Listado de productos</h5>
+          <ul class="nav-list">
+            <li><a href="#">Guitarras</a></li>
+            <li><a href="#">Pedales</a></li>
+            <li><a href="#">Amplificadores</a></li>
+            <li><a href="#">Cuerdas</a></li>
+            <li><a href="#">Pianos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row no-gutters social-container">
+      <div class="col"><a class="social-inner" href="#"><span
+            class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+      <div class="col"><a class="social-inner" href="#"><span
+            class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a>
+      </div>
+      <div class="col"><a class="social-inner" href="#"><span
+            class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+    </div>
+  </footer>

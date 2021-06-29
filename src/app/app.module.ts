@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { PagoComponent } from './pago/pago.component';
 import { ProductosComponent } from './productos/productos.component';
 import { DatosEnvioComponent } from './datos-envio/datos-envio.component';
+import { Pagina2Component } from './pagina2/pagina2.component';
 
 
 const routes: Routes = [{
@@ -26,6 +27,10 @@ const routes: Routes = [{
 {
   path:'datosEnvio',
   component: DatosEnvioComponent
+},
+{
+  path:'pagina2',
+  component: Pagina2Component
 }
 ];
 
@@ -35,7 +40,8 @@ const routes: Routes = [{
     LoginComponent,
     PagoComponent,
     ProductosComponent,
-    DatosEnvioComponent
+    DatosEnvioComponent,
+    Pagina2Component
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 import { DatosEnvioComponent } from '../datos-envio/datos-envio.component';
 import { TotalService } from '../total.service';
@@ -15,11 +15,15 @@ import { TotalService } from '../total.service';
 export class PagoComponent implements OnInit {
 
 
-  nombreTitular = new FormControl('');
-  numeroTarjeta = new FormControl('');
-  fem = new FormControl('');
-  fea = new FormControl('');
-  fecvv = new FormControl('');
+  datosTarjeta = new FormGroup({
+    
+    nombreTitular : new FormControl('', Validators.required),
+    nTarjeta : new FormControl('', Validators.required),
+    fechaE : new FormControl('', Validators.required),
+    fechaA : new FormControl('', Validators.required),
+    cvv : new FormControl('', Validators.required),
+  });
+
   
   datosCliente = this.serviceData.datosDeEnvio
   productosCantidad = this.serviceData.productosPorPagar
@@ -36,12 +40,7 @@ export class PagoComponent implements OnInit {
 
   guardarTarjeta(){
 
-    this.nombreTitular = this.nombreTitular.value
-    this.numeroTarjeta = this.numeroTarjeta.value
-    this.fem = this.fem.value
-    this.fea = this.fea.value
-    this.fecvv = this.fecvv.value
-    
+ 
 
   }
 

@@ -1,20 +1,15 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { TotalService } from '../total.service';
-import Swal from 'sweetalert2'
-import { formatCurrency } from '@angular/common';
-import {Router} from '@angular/router';
-
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  template: `
-    <app-pago [childMessage]="parentMessage"></app-pago>
-  `,
-  styleUrls: ['./productos.component.css']
+  selector: 'app-pagina2',
+  templateUrl: './pagina2.component.html',
+  styleUrls: ['./pagina2.component.css']
 })
-export class ProductosComponent implements OnInit {
+export class Pagina2Component implements OnInit {
   a = [];
   Noencontrado:number = 0;
   ver:any= {};
@@ -32,24 +27,24 @@ export class ProductosComponent implements OnInit {
   productos: any[] = [];
   productosActual1 = [   // Array para items en stock
     {
-      codigo: 211763, nombre: 'Pedal de efecto Boss DD-8 ', precio: 179900,
-      descripcion: 'Delay digital boss DD-8', img: '../../assets/tarjetas/boss1.jpg',
-      tags : "pedal"
+      codigo: 211411, nombre: 'Piano digital Roland FP-10 ', precio: 550000,
+      descripcion: 'Cuando llegue la inspiración, siéntese en el último modelo de la reconocida serie de pianos de Roland FP El FP-10 de nivel de entrada.', img: '../../assets/tarjetas/piano1.jpg',
+      tags : "piano"
     },
     {
-      codigo: 207467, nombre: 'Roland AC60 ', precio: 519900,
-      descripcion: 'Este amplificador estéreo acústico (30w x 2) ofrece un chorus estéreo / multibanda', img: '../../assets/tarjetas/amp1.jpg',
-      tags : "amp"
+      codigo: 1108562, nombre: 'Piano digital Kawai  AC60 ', precio: 719900,
+      descripcion: 'Los últimos pianos digitales de la serie CN de Kawai proporcionan un teclado realista de tamaño completo, hermosos sonidos de piano de cola y salidas de audífono que permiten la práctica silenciosa en cualquier momento del día.', img: '../../assets/tarjetas/piano2.jpg',
+      tags : "piano"
     },
     {
-      codigo: 1105866, nombre: 'Guitarra eléctrica Ltd EC401', precio: 390000,
-      descripcion: 'GTR negra capsulas activas', img: '../../assets/tarjetas/gt1.jpg',
-      tags : "guitarra"
+      codigo: 211352, nombre: 'Batería electrónica Roland TD', precio: 990000,
+      descripcion: 'La TD-1DMK te ofrece una gratificante experiencia musical en un kit compacto y transportable. Este módulo es sencillo pero potente, e incluye diversos kits de percusión expresivos, conectados a los pads de malla doble de Roland para la caja y los toms. Estos pads consiguen un «rebote» realista gracias a las dos capas de malla, que hacen que la batería rebote después de golpear la batería, como en un kit acústico.', img: '../../assets/tarjetas/bateria1.jpg',
+      tags : "bateria,drums"
     },
     {
-      codigo: 1108058, nombre: 'Ernie Ball', precio: 12000,
-      descripcion: 'Cuerdas', img: '../../assets/tarjetas/cuerdas1.jpg',
-      tags : "guitarra, cuerdas"
+      codigo: 206503, nombre: 'Batería para niño', precio: 402000,
+      descripcion: 'POWERDRUMS nos muestra su innovadora serie de percusiones y baterías económicas, enfocadas para el estudio. Diseñadas y fabricadas al mejor estilo de las grandes marcas a nivel mundial. Batería para niño. Incluye pedal de bombo y sillín...', img: '../../assets/tarjetas/bateria2.jpg',
+      tags : "niño,bateria"
     },
     {
       codigo: 1097512, nombre: 'Guitarra electroacústica Takamine', precio: 130000,
@@ -76,42 +71,42 @@ export class ProductosComponent implements OnInit {
 
   productosActual = [   // Array para items en stock
     { id:0,
-      codigo: 211763, nombre: 'Pedal de efecto Boss DD-8 ', precio: 179900,
-      descripcion: 'Delay digital boss DD-8', img: '../../assets/tarjetas/boss1.jpg',
-      tags : "pedal"
-    },
-    {
-      codigo: 207467, nombre: 'Roland AC60 ', precio: 519900,
-      descripcion: 'Este amplificador estéreo acústico (30w x 2) ofrece un chorus estéreo / multibanda', img: '../../assets/tarjetas/amp1.jpg',
-      tags : "nvidia, msi, gtx"
+      codigo: 211411, nombre: 'Piano digital Roland FP-10 ', precio: 550000,
+      descripcion: 'Cuando llegue la inspiración, siéntese en el último modelo de la reconocida serie de pianos de Roland FP El FP-10 de nivel de entrada.', img: '../../assets/tarjetas/piano1.jpg',
+      tags : "piano"
     },
     { id:1,
-      codigo: 1105866, nombre: 'Guitarra eléctrica Ltd EC401', precio: 390000,
-      descripcion: 'GTR negra capsulas activas', img: '../../assets/tarjetas/gt1.jpg',
-      tags : "guitarra"
+      codigo: 1108562, nombre: 'Piano digital Kawai  AC60 ', precio: 719900,
+      descripcion: 'Los últimos pianos digitales de la serie CN de Kawai proporcionan un teclado realista de tamaño completo, hermosos sonidos de piano de cola y salidas de audífono que permiten la práctica silenciosa en cualquier momento del día.', img: '../../assets/tarjetas/piano2.jpg',
+      tags : "piano"
     },
     { id:2,
-      codigo: 1108058, nombre: 'Ernie Ball', precio: 12000,
-      descripcion: 'Cuerdas', img: '../../assets/tarjetas/cuerdas1.jpg',
-      tags : "guitarra, cuerdas"
+      codigo: 211352, nombre: 'Batería electrónica Roland TD', precio: 990000,
+      descripcion: 'La TD-1DMK te ofrece una gratificante experiencia musical en un kit compacto y transportable. Este módulo es sencillo pero potente, e incluye diversos kits de percusión expresivos, conectados a los pads de malla doble de Roland para la caja y los toms. Estos pads consiguen un «rebote» realista gracias a las dos capas de malla, que hacen que la batería rebote después de golpear la batería, como en un kit acústico.', img: '../../assets/tarjetas/bateria1.jpg',
+      tags : "bateria,drums"
     },
     { id:3,
+      codigo: 206503, nombre: 'Batería para niño', precio: 402000,
+      descripcion: 'POWERDRUMS nos muestra su innovadora serie de percusiones y baterías económicas, enfocadas para el estudio. Diseñadas y fabricadas al mejor estilo de las grandes marcas a nivel mundial. Batería para niño. Incluye pedal de bombo y sillín...', img: '../../assets/tarjetas/bateria2.jpg',
+      tags : "niño,bateria"
+    },
+    { id:4,
       codigo: 1097512, nombre: 'Guitarra electroacústica Takamine', precio: 130000,
       descripcion: 'Guitarra electro acustica', img: '../../assets/tarjetas/gt2.jpg',
       tags : "guitarra"
     },
-    { id:4,
+    { id:5,
       codigo: 211479, nombre: 'Guitarra electroacústica ', precio: 85990,
       descripcion: 'GTR acustica', img: '../../assets/tarjetas/gt3.jpg',
       tags : "guitarra"
     },
 
-    { id:5,
+    { id:6,
       codigo: 210109, nombre: 'Secuenciador de bajo Roland TB-3 ', precio: 334900,
       descripcion: 'LA MAGIA DEL TB-303 CON NUEVOS SONIDOS Y CARACTERÍSTICAS MODERNAS', img: '../../assets/tarjetas/tc1.jpg',
       tags : "Teclado"
     },
-    { id:6,
+    { id:7,
       codigo: 1096284, nombre: 'Mini atril para guitarra', precio: 29990,
       descripcion: 'El GS402BB es un mini stand para guitarra eléctrica', img: '../../assets/tarjetas/atril1.jpg',
       tags : "atril"
@@ -238,14 +233,14 @@ export class ProductosComponent implements OnInit {
 
    this.productosActual =[   // Array para items en stock
     {  id:0,
-      codigo: 211763, nombre: 'Pedal de efecto Boss DD-8 ', precio: 179900,
-      descripcion: 'Delay digital boss DD-8', img: '../../assets/tarjetas/boss1.jpg',
-      tags : "pedal"
+      codigo: 211411, nombre: 'Piano digital Roland FP-10 ', precio: 550000,
+      descripcion: 'Cuando llegue la inspiración, siéntese en el último modelo de la reconocida serie de pianos de Roland FP El FP-10 de nivel de entrada.', img: '../../assets/tarjetas/piano1.jpg',
+      tags : "piano"
     },
     { id:1,
-      codigo: 207467, nombre: 'Roland AC60 ', precio: 519900,
-      descripcion: 'Este amplificador estéreo acústico (30w x 2) ofrece un chorus estéreo / multibanda', img: '../../assets/tarjetas/amp1.jpg',
-      tags : "amplificador,amp"
+      codigo: 1108562, nombre: 'Piano digital Kawai  AC60 ', precio: 719900,
+      descripcion: 'Los últimos pianos digitales de la serie CN de Kawai proporcionan un teclado realista de tamaño completo, hermosos sonidos de piano de cola y salidas de audífono que permiten la práctica silenciosa en cualquier momento del día.', img: '../../assets/tarjetas/piano2.jpg',
+      tags : "piano"
     },
     { id:2,
       codigo: 1105866, nombre: 'Guitarra eléctrica Ltd EC401', precio: 390000,
@@ -253,14 +248,14 @@ export class ProductosComponent implements OnInit {
       tags : "guitarra"
     },
     { id:3,
-      codigo: 1108058, nombre: 'Ernie Ball', precio: 12000,
-      descripcion: 'Cuerdas', img: '../../assets/tarjetas/cuerdas1.jpg',
-      tags : "guitarra, cuerdas"
+      codigo: 211352, nombre: 'Batería electrónica Roland TD', precio: 990000,
+      descripcion: 'La TD-1DMK te ofrece una gratificante experiencia musical en un kit compacto y transportable. Este módulo es sencillo pero potente, e incluye diversos kits de percusión expresivos, conectados a los pads de malla doble de Roland para la caja y los toms. Estos pads consiguen un «rebote» realista gracias a las dos capas de malla, que hacen que la batería rebote después de golpear la batería, como en un kit acústico.', img: '../../assets/tarjetas/bateria1.jpg',
+      tags : "bateria,drums"
     },
     { id:4,
-      codigo: 1097512, nombre: 'Guitarra electroacústica Takamine', precio: 130000,
-      descripcion: 'Guitarra electro acustica', img: '../../assets/tarjetas/gt2.jpg',
-      tags : "guitarra"
+      codigo: 206503, nombre: 'Batería para niño', precio: 402000,
+      descripcion: 'POWERDRUMS nos muestra su innovadora serie de percusiones y baterías económicas, enfocadas para el estudio. Diseñadas y fabricadas al mejor estilo de las grandes marcas a nivel mundial. Batería para niño. Incluye pedal de bombo y sillín...', img: '../../assets/tarjetas/bateria2.jpg',
+      tags : "niño,bateria"
     },
     { id:5,
       codigo: 211479, nombre: 'Guitarra electroacústica ', precio: 85990,
@@ -293,7 +288,9 @@ export class ProductosComponent implements OnInit {
   
   }
 
+
   pagina(){
- this.router.navigate(['pagina2']);
-  }
-}
+    this.router.navigate(['productos']);
+     }
+   }
+
