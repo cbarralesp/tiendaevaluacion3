@@ -1,31 +1,5 @@
-<!--
-  
-  <div class="container" >
-      <div class="row">
-              <div class="col-md-4 mt-3">
-                  <form class="d-flex">
-                    <a class="nav-link" routerLink="productos">Productos</a>
-                      <input class="form-control me-lg-12" [formControl]="clave" ng-model="searchText" type="text" placeholder="Palabra clave: Guitarra" aria-label="Search">
-                      <button (click) = "busquedaClave()" class="btn btn-outline-success" type="submit">Buscar</button>
-                      <button (click) = "quitarBusqueda()" class="btn btn-outline-success" type="submit">Quitar</button>
-                      <svg class="bi" width="32" height="32" fill="currentColor">
-                        <use xlink:href="bootstrap-icons.svg#heart-fill"/>
-                      </svg>
-                    </form> 
-              </div>   
-              <div class="col-md-4 mt-8">
-              </div>
-              <div class="col-md-4 mt-3">
-                  <button data-bs-target="#exampleModal" data-bs-toggle="modal" class="btn float-end"><i class="bi bi-cart"></i>Carrito<span *ngIf="productosCarrito.length>0">({{productosCarrito.length}})</span></button>
-              </div>
-      </div>
-      
-  </div>
-  <hr>
- 
-  -->
 
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--Navbar-->
@@ -144,9 +118,9 @@
                     <h3 class="product-title">{{items.nombre}}</h3>
 
                     <p class="product-description">{{items.descripcion}}</p>
-                    <h4 class="price">current price: <span>{{items.precio}}</span></h4>
+                    <h4 class="price">Precio: <span>{{items.precio}}</span></h4>
                     <div class="action">
-                      <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                      <button class="add-to-cart btn btn-default" type="button">Agregar al carrito</button>
                     </div>
                   </div>
                 </div>

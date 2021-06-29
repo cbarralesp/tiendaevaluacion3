@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TotalService } from '../total.service';
 
@@ -195,13 +195,5 @@ export class ProductosComponent implements OnInit {
     
   }
 
-  quitarBusqueda(){
-    this.productosActual = [];
-    for(let i=0; i<this.productosActual1.length;i++){
-      this.productosActual.push({codigo: this.productosActual1[i].codigo, nombre: this.productosActual1[i].nombre, precio: this.productosActual1[i].precio, 
-        descripcion: this.productosActual1[i].descripcion, img: this.productosActual1[i].img, tags: this.productosActual1[i].tags});
-    }
-    this.productosActual = this.productosActual1;
-  }
 
 }

@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 export class TotalService {
 
   userSesion = "";
-  productosPorPagar:any [] = [];
   datosDeEnvio:any [] = [];
+  productosPorPagar:any [] = [];
+ 
 }
 
